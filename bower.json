@@ -1,0 +1,25 @@
+{
+  "name": "Angular App Demo For TL",
+  "authors": [
+    "chetan s"
+  ],
+  "description": "Simple Angular Calculato",
+  "main": "app.js",
+  "keywords": [
+    "AngularJs",
+    "Calculator"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9"
+  }
+}
