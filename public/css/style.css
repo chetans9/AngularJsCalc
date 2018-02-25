@@ -1,32 +1,30 @@
 #calc button {
-	height: 50px;
-  	width: 55px;
-  	margin: 10px auto;
+    height: 50px;
+    width: 55px;
+    margin: 10px auto;
 }
 
 #calc button#equals {
-	height: 50px;
-  	width: 110px;
-  	margin: 10px auto;
+    height: 50px;
+    width: 110px;
+    margin: 10px auto;
 }
-#ledDisplay{
-	border: 1px solid #d9d9d9;
+
+#ledDisplay {
+    border: 1px solid #d9d9d9;
     border-top: 1px solid #c0c0c0;
     color: #333;
     padding-left: 5px;
-    
-    margin-bottom: 5px;
+    margin: auto;
     outline: none;
     width: 100%;
     background: white;
-
 }
 
-#calc{
-	background: whitesmoke;
-	padding-top: 10px;
+#calc {
+    background: #e2e2e2;
+    padding-top: 10px;
+    margin-top: 50px;
+    border-radius: 4px;
 }
 
-#calc .calc-body{
-	background: whitesmoke;
-}
