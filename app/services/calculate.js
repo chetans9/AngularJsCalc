@@ -11,6 +11,10 @@ app.service('myCalc', function() {
         	return $scope.currentTotal * $scope.pendingValue;
         }
         if($scope.pendingOperation == 'divide'){
+
+            if($scope.pendingValue == 0){
+                return "Cannot divide By zero";
+            }
         	return $scope.currentTotal / $scope.pendingValue;
         }
         if($scope.pendingOperation == 'mod'){

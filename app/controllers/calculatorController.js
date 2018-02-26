@@ -16,17 +16,16 @@ app.controller('calculatorController', function($scope,myCalc) {
     //whenever user presses button.
     $scope.enterInput = function(value) {
 
-    	
-    	
     	if(value == "." && $scope.pointerExists){
     		return false;
     	}
     	if(value == "."){
     		$scope.pointerExists = 1;
     	}
-    	
+
+
         //if initial or want to enter nextNumber 
-        if ($scope.ledDisplay == "0" || $scope.nextNumber) {
+        if ($scope.ledDisplay == 0 || $scope.nextNumber) {
             $scope.ledDisplay = value;
             $scope.nextNumber = false;
 
@@ -34,10 +33,6 @@ app.controller('calculatorController', function($scope,myCalc) {
         	//Build input Stream on LED.
             $scope.ledDisplay += String(value);
         }
-
-
-        
-        
 
         //Set Pending value for Calculations
         $scope.pendingValue = parseFloat($scope.ledDisplay);
@@ -58,10 +53,8 @@ app.controller('calculatorController', function($scope,myCalc) {
     		$scope.pointerExists = 0;
         }
         else{
-
         	//No previously entered Number
         }
-
         //Show current total to led display
         $scope.ledDisplay = $scope.currentTotal;
         
@@ -76,31 +69,37 @@ app.controller('calculatorController', function($scope,myCalc) {
     	
     	$scope.currentTotal = myCalc.calculate($scope);
     	$scope.ledDisplay = $scope.currentTotal;
-    	//set pending oerartion to null
-    	$scope.pendingOperation = null;
     	$scope.pendingValue = $scope.currentTotal;
-    	$scope.pointerExists = 0;
-    	$scope.nextNumber = null;
+    	$scope.nextNumber = true;
+        this.resetPendingOperation();
     };
 
     $scope.allClear = function() {
-    $scope.currentTotal = null;
-    $scope.pendingValue = null;
-    $scope.pendingOperation = null;
-    $scope.ledDisplay = 0;
-    $scope.pointerExists = 0;
-    
-  };
 
-  $scope.clearOne = function(){
+        $scope.currentTotal = null;
+        $scope.pendingValue = null;
+        $scope.ledDisplay = 0;
+        this.resetPendingOperation();
+    };
 
-  	$scope.ledDisplay = $scope.ledDisplay.slice(0, -1);
-  	if($scope.ledDisplay.length == 0){
-  		$scope.ledDisplay = '0';
+    $scope.clearOne = function(){
+
+  	 $scope.ledDisplay = $scope.ledDisplay.slice(0, -1);
+  	 if($scope.ledDisplay.length == 0){
+
+  		$scope.ledDisplay = 0;
   		$scope.pointerExists = 0;
   	}
-  	$scope.pendingValue = parseInt($scope.ledDisplay);
-
-
+  	$scope.pendingValue = parseFloat($scope.ledDisplay);
   }
+
+
+  $scope.resetPendingOperation = function(){
+    //set pending oerartion to null
+    $scope.pendingOperation = null;
+    //Reset pointer flag. Allow user to add pointer.
+    $scope.pointerExists = 0;
+  }
+
+
 });
