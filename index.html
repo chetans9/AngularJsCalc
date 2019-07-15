@@ -6,13 +6,13 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="public/libs/angular/angular.min.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
-    <title>Simple AngularJs Calc</title>
+    <title>AngularJS Calculator</title>
 </head>
 
 <body>
     <div class="container text-center" ng-controller="calculatorController">
         <div class="row">
-            <div class="offset-sm-4 col-sm-3 text-center" id="calc">
+            <div class="offset-md-4 col-md-3 text-center" id="calc">
                 <div class="row" id="ledDisplay">
                     <span>{{ledDisplay}}</span>
                     <span>{{operationIcon}}</span>
@@ -20,7 +20,7 @@
                 <div class="row">
                     <button id="allClear" type="button" class="btn btn-danger" ng-click="allClear()">AC</button>
                     <button id="clear" type="button" class="btn btn-warning" ng-click="clearOne()">CE</button>
-                    <button id="%" type="button" class="btn btn-info" ng-click="operate('mod')">mod</button>
+                    <button id="modulas" type="button" class="btn btn-info" ng-click="operate('mod')">mod</button>
                     <button id="/" type="button" class="btn btn-info" ng-click="operate('divide')">/</button>
                 </div>
                 <div class="row">
